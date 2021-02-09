@@ -1,0 +1,47 @@
+<div class="container mt-4">
+
+    <div class="row">
+        <div class="col-12">
+            <a routerLink='/add-task' class="btn btn-primary">
+                Add New Task
+            </a>
+
+        </div>
+    </div>
+    <div class="row">
+        
+        <div class=" col-12 my-3" *ngIf="tasksSer.tasks.length == 0">
+            <p  class="alert alert-primary">
+                There is no tasks! 
+            </p>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class=" " *ngIf='tasksSer.tasks.length > 0 ' class="card" >
+                <ul class="list-group">
+                  <li class="list-group-item" 
+                      *ngFor="let task of tasksSer.tasks; index as i">
+                      <div class="row">
+                        <div class="col-6">
+                            <a [routerLink]="['task',i]" class="task-list">
+                               {{i}} - {{task.title}} 
+                            </a>
+     
+                          </div>
+                           <div class="col-6 text-right">
+                            <button class="btn btn-danger   mx-2" (click)="deleteTask(i)"><i class="fas fa-trash-alt"></i> Delete Task</button>
+                            <button class="btn btn-primary  mx-2"   ><i class="fas fa-edit"></i> Edit Task</button>
+                            <button class="btn btn-success  mx-2"   ><i class="fas fa-check"></i> Mark as DONE</button>
+     
+                           </div>
+    
+                      </div>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+

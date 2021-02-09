@@ -1,0 +1,26 @@
+<div class="container mt-4">
+
+    <div class="row">
+        <div class="col-12">
+            <form action="">
+                <div class="form-group">
+                    <label for="taskTitle"> Task Title :</label>
+                    <input type="text" #taskTitle name="taskTitle" id="" class="form-control" placeholder="Write title of task">
+
+                </div>
+                <div class="form-group">
+                    <label for="taskTitle"> Task Description :</label>
+                    <textarea name="" id="" #taskDesc  class="form-control" placeholder="Write title of task"></textarea>
+                </div>
+                <button class="btn btn-primary mx-2" (click)='saveTask(taskTitle,taskDesc)'>
+                    Save Task
+                </button>
+                <button class="btn btn-light mx-2" routerLink='/'>
+                    Cancle
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
